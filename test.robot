@@ -35,8 +35,24 @@ Login Buy And Logout
     Open Site    ${URL}
     Login To Demoblaze    ${USERNAME}    ${PASSWORD}
     Verify Login Successful    ${USERNAME}
-    Buy Product From Demoblaze    Samsung galaxy s6
+    Add And Buy Product From Demoblaze    Samsung galaxy s6
     Log Out From Demoblaze
+    CustomKeywords.Close Browser
+
+Sign Up New User And Login And Buy And Logout
+    Open Site    ${URL}
+    ${USERNAME}    ${PASSWORD}=    Sign Up To Demoblaze    user
+    Log    Зарегистрирован новый пользователь: ${USERNAME}
+    Sleep    3s
+    Login To Demoblaze    ${USERNAME}    ${PASSWORD}
+    Verify Login Successful    ${USERNAME}
+    Sleep    2s
+    Add To Cart
+    Sleep    2s
+    Buy Product From Demoblaze
+    Sleep    3s
+    Log Out From Demoblaze
+    Sleep   0.5s
     CustomKeywords.Close Browser
 
 *** Keywords ***
