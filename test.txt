@@ -1,0 +1,38 @@
+Test Case: User Registration, Login, Product Purchase, and Logout on Demoblaze
+
+Objective:
+Verify that a new user can successfully register, log in, purchase a product, and log out on the Demoblaze website.
+
+Preconditions:
+- Chrome browser is installed.
+- WebDriver (ChromeDriver) is configured correctly.
+- The Demoblaze website is accessible at https://www.demoblaze.com.
+
+Test Steps:
+1. Open the Demoblaze website.
+2. Click on Sign up.
+3. Enter a unique username and password.
+4. Click on Sign up to create a new account.
+5. Accept any alert confirming successful registration.
+6. Close the browser.
+7. Reopen the browser and open the Demoblaze website again.
+8. Click on Log in.
+9. Enter the same username and password created earlier.
+10. Click on Log in and verify that the welcome message appears (e.g., “Welcome username”).
+11. Click on any product name (for example, Samsung galaxy s6).
+12. Click Add to cart and confirm the alert message “Product added”.
+13. Go to the Cart page.
+14. Click Place Order.
+15. Fill in all required fields in the order form (Name, Country, City, Card, Month, Year).
+16. Click Purchase.
+17. Verify that the confirmation message “Thank you for your purchase!” appears.
+18. Click OK to close the confirmation dialog.
+19. Click Log out to end the session.
+20. Verify that the login button is visible again.
+
+Expected Result:
+- The user account is successfully created.
+- Login works correctly with the new credentials.
+- Product can be added to the cart and purchased successfully.
+- The confirmation message is displayed after purchase.
+- Logout returns the user to the main page without “Welcome username” displayed.
