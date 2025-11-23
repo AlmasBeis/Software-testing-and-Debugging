@@ -16,10 +16,10 @@ class CustomKeywords:
     def __init__(self):
         self.selib = SeleniumLibrary()
 
-    def open_site(self, url):
+    def open_site(self, url, browser):
         """Открывает сайт"""
         print(f"=== Открываю сайт: {url} ===")
-        self.selib.open_browser(url, "chrome")
+        self.selib.open_browser(url, browser)
         self.selib.maximize_browser_window()
         print("=== Браузер открыт ===")
 
@@ -49,7 +49,7 @@ class CustomKeywords:
         self.selib.input_text(LOGIN_USERNAME_INPUT, username)
         self.selib.input_text(LOGIN_PASSWORD_INPUT, password)
         self.selib.click_button(LOGIN_SUBMIT_BUTTON)
-        self.selib.wait_until_page_contains("Welcome", timeout=10)
+        self.selib.wait_until_page_contains("Welcome", timeout=20)
 
     def verify_login_successful(self, username):
         """Проверяет успешный вход"""

@@ -13,14 +13,14 @@ ${BROWSER}     chrome
 
 *** Test Cases ***
 Sign Up New User
-    Open Site    ${URL}
+    Open Site    ${URL}    Safari
     ${USERNAME}    ${PASSWORD}=    Sign Up To Demoblaze    user
     Log    Зарегистрирован новый пользователь: ${USERNAME}
     CustomKeywords.Close Browser
 
 Login And Logout
     [Documentation]   Login
-    Open Site    ${URL}
+    Open Site    ${URL}    Safari
     Login To Demoblaze    ${USERNAME}    ${PASSWORD}
     Verify Login Successful    ${USERNAME}
     #Click Element    id:login2
@@ -29,18 +29,19 @@ Login And Logout
     CustomKeywords.Close Browser
 
 Login Buy And Logout
-    Open Site    ${URL}
+    Open Site    ${URL}    Safari
     ${USERNAME}    ${PASSWORD}=    Sign Up To Demoblaze    autotest
     CustomKeywords.Close Browser
-    Open Site    ${URL}
+    Open Site    ${URL}    Safari
     Login To Demoblaze    ${USERNAME}    ${PASSWORD}
     Verify Login Successful    ${USERNAME}
     Add And Buy Product From Demoblaze    Samsung galaxy s6
+    Sleep    1s
     Log Out From Demoblaze
     CustomKeywords.Close Browser
 
 Sign Up New User And Login And Buy And Logout
-    Open Site    ${URL}
+    Open Site    ${URL}    Safari
     ${USERNAME}    ${PASSWORD}=    Sign Up To Demoblaze    user
     Log    Зарегистрирован новый пользователь: ${USERNAME}
     Sleep    3s
